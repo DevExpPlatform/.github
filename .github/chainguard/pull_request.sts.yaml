@@ -4,3 +4,4 @@ permissions:
   contents: read
   pull_requests: write
   metadata: read
+repositories: []
