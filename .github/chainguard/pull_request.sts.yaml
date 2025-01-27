@@ -3,5 +3,5 @@ subject_pattern: 'repo:DevExpPlatform/.*'
 permissions:
   contents: read
   pull_requests: write
-  metadata: read
+
 repositories: []
