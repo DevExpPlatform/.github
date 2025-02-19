@@ -1,0 +1,7 @@
+issuer: https://token.actions.githubusercontent.com
+claim_pattern:
+  workflow_ref: DevExpPlatform/required-workflows/.github/workflows/security-checks.yaml@.*
+permissions:
+  contents: read
+  metadata: read
+repositories: []
