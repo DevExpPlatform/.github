@@ -1,5 +1,5 @@
 issuer: https://token.actions.githubusercontent.com
-subject_pattern: 'repo:DevExpPlatform/terraform-*'
+subject_pattern: 'repo:DevExpPlatform/terraform.*'
 permissions:
   contents: read
   metadata: read
