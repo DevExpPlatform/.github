@@ -1,8 +1,0 @@
-issuer: https://token.actions.githubusercontent.com
-subject_pattern: ^repo:DevExpPlatform/landing-zone-.*-gitops:.*$
-
-permissions:
-  contents: read
-
-repositories:
-  - gitops
