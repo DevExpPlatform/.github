@@ -1,0 +1,9 @@
+issuer: https://token.actions.githubusercontent.com
+subject_pattern: 'repo:DevExpPlatform/project-gcio-[^:]+:.*'
+
+permissions:
+  contents: write
+  pull_requests: write
+  metadata: read
+
+repositories: []
