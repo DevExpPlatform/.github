@@ -1,5 +1,5 @@
 issuer: https://token.actions.githubusercontent.com
-subject_pattern: 'repo:DevExpPlatform/project-gcio-[^:]+:.*'
+subject_pattern: 'repo:DevExpPlatform/(project-gcio-[^:]+|project-workforce-management-backend):.*'
 
 permissions:
   contents: write

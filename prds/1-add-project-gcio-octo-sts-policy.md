@@ -6,20 +6,20 @@
 
 ## Problem Statement
 
-Several `project-gcio-*` repositories need to open and update automated pull requests from GitHub Actions workflows without relying on per-repository PAT secrets.
+Several `project-gcio-*` repositories, plus the legacy repository `project-workforce-management-backend`, need to open and update automated pull requests from GitHub Actions workflows without relying on per-repository PAT secrets.
 
 Managing a separate PAT per repository does not scale, and requiring the platform team to update trust policy every time GCIO adds a new workflow or repository is not acceptable.
 
 ## Proposed Solution
 
-Treat all `project-gcio-*` repositories as a shared trust zone for automated PR operations.
+Treat all `project-gcio-*` repositories, plus the legacy repository `project-workforce-management-backend`, as a shared trust zone for automated PR operations.
 
-Add a single org-level Octo STS policy in `DevExpPlatform/.github/.github/chainguard/` that allows federation only from repositories whose name starts with `project-gcio-` and grants the minimum permissions needed for automated PR flows.
+Add a single org-level Octo STS policy in `DevExpPlatform/.github/.github/chainguard/` that allows federation only from repositories whose name starts with `project-gcio-` or from `project-workforce-management-backend`, and grants the minimum permissions needed for automated PR flows.
 
 ## Key Requirements
 
 - [x] The policy **MUST** live in `DevExpPlatform/.github/.github/chainguard/`
-- [x] The policy **MUST** restrict federation to repositories matching `project-gcio-*`
+- [x] The policy **MUST** restrict federation to repositories matching `project-gcio-*` plus `project-workforce-management-backend`
 - [x] The policy **MUST** grant `contents: write`
 - [x] The policy **MUST** grant `pull_requests: write`
 - [x] The policy **MUST** grant `metadata: read`
@@ -36,7 +36,7 @@ Add a single org-level Octo STS policy in `DevExpPlatform/.github/.github/chaing
 ## Success Validation
 
 - Policy file added at `.github/chainguard/project-gcio-pr-write.sts.yaml`
-- Policy expresses the GCIO repository prefix trust boundary
+- Policy expresses the GCIO repository prefix trust boundary and the temporary inclusion of `project-workforce-management-backend`
 - PRD captures the governance rationale for a single shared policy
 
 ## Work Log
